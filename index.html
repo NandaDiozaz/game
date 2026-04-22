@@ -207,9 +207,10 @@
 
     <script type="module">
   //nanda       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-  //nanda      import { getFirestore, collection, doc, setDoc, getDoc, onSnapshot, addDoc, deleteDoc, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
+        import { signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+        //nanda      import { getFirestore, collection, doc, setDoc, getDoc, onSnapshot, addDoc, deleteDoc, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
 //========================================================================================================
   // Import the functions you need from the SDKs you need
@@ -242,7 +243,7 @@
 //        const firebaseConfig = JSON.parse(__firebase_config);
 //        const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-//        const db = getFirestore(app);
+        const db = getFirestore(app);
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'space-dodge-global-v3';
 
         const canvas = document.getElementById('gameCanvas');
