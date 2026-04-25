@@ -1,0 +1,17 @@
+name: Deploy to Firebase Hosting
+on:
+  push:
+    branches:
+      - main  # Ganti jadi master kalau branch kamu namanya master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseToken: '${{ secrets.FIREBASE_TOKEN }}'
+          projectId: d-x-gr
+          channelId: live
